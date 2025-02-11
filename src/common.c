@@ -20,15 +20,13 @@ void print_array(const char *message, const float *in, const size_t n) {
 
 void print_array_complex(const char *message, const float complex *in,
                          const size_t n) {
-#if 0
-  printf("%s[", message);
-  for (size_t i = 0; i < n; ++i) {
-    if (i > 0) {
-      printf(", ");
-    }
-    printf("%.2f + i%.2f", crealf(in[i]), cimagf(in[i]));
+#if 1
+  if (message != NULL) {
+    printf("%s", message);
   }
-  printf("]\n");
+  for (size_t i = 0; i < n; ++i) {
+    printf("%02zu: %5.2f + i %5.2f\n", i, crealf(in[i]), cimagf(in[i]));
+  }
 #else
   float in_cos[n + 1];
   float in_sin[n + 1];

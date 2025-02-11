@@ -1,4 +1,4 @@
-#include "2-complex-ft.h"
+#include "2-complex-dft.h"
 #include "common.h"
 
 #include <complex.h>
@@ -9,7 +9,7 @@
 extern float pi;
 
 // O(n^2)
-void complex_ft(float complex *out, const float *in, const size_t n) {
+void complex_dft(float complex *out, const float *in, const size_t n) {
   for (size_t freq = 0; freq <= n; ++freq) {
     out[freq] = 0;
     for (size_t i = 0; i <= n; ++i) {
@@ -19,7 +19,7 @@ void complex_ft(float complex *out, const float *in, const size_t n) {
   }
 }
 
-void complex_ft_main(void) {
+void complex_dft_main(void) {
   START_EXAMPLE;
 
   const size_t n = 10;
@@ -39,7 +39,7 @@ void complex_ft_main(void) {
    * the Euler's Formula: e^(ix) = cos(x) + i*sin(x)
    */
   float complex out[n + 1];
-  complex_ft(out, in, n);
+  complex_dft(out, in, n);
 
   print_array(/*   */ "in:  ", in, n + 1);
   print_array_complex("out: ", out, n + 1);

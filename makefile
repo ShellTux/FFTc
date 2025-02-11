@@ -38,8 +38,8 @@ endif
 SRC = \
 			src/main.c \
 			src/common.c \
-			src/1-simple-ft.c \
-			src/2-complex-ft.c
+			src/1-simple-dft.c \
+			src/2-complex-dft.c
 
 BUILD_DIR = build
 ifeq ($(MODE), DEBUG)

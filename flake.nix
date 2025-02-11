@@ -35,6 +35,7 @@
             ++ [
               cht-sh
               entr
+              octave
             ];
           };
       });
