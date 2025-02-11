@@ -41,6 +41,10 @@ void simple_ft_main(void) {
   mixing_frequency(in, n, 3, cosf);
   mixing_frequency(in, n, 7, cosf);
 
+  /*
+   * NOTE: We need to store both sin and cos wave functions because for a given
+   * frequency multiplying by the shifted wave will produce zero.
+   */
   float out_sin[n + 1];
   float out_cos[n + 1];
   simple_ft(out_sin, out_cos, in, n);

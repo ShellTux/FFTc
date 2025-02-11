@@ -33,6 +33,11 @@ void complex_ft_main(void) {
   mixing_frequency(in, n, 1, sinf);
   mixing_frequency(in, n, 7, cosf);
 
+  /*
+   * NOTE: Instead of having 2 buffers to store the sin and cos frequencies
+   * separately from the FT, we can combine them using complex numbers. Using
+   * the Euler's Formula: e^(ix) = cos(x) + i*sin(x)
+   */
   float complex out[n + 1];
   complex_ft(out, in, n);
 
